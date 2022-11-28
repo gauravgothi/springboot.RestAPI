@@ -17,6 +17,7 @@ public class BookService {
 
     //get All books
     public List<Book> getAllBook()  {
+
         return list;
     }
 
@@ -25,5 +26,24 @@ public class BookService {
         Book book = null;
         book = list.stream().filter(e->e.getBookId()==bookId).findFirst().get();
         return book;
+    }
+
+    // to add book
+    public Book addBook(Book b) {
+        list.add(b);
+        return b;
+    }
+
+    public void deleteBook(int bookId) {
+        Book b = getBookById(bookId);
+        System.out.println(b + " is deleted");
+        list.remove(getBookById(bookId));
+
+    }
+
+    //Update Book Service
+    public Book updateBook(int bookId) {
+        getBookById(bookId).setBookAuthor("Robert Kiyosaki");
+        return getBookById(bookId);
     }
 }
