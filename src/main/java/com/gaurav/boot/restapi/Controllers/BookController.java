@@ -56,8 +56,8 @@ public class BookController {
 
     //Update Book
     @PutMapping("/books/{bookId}")
-    public void updateBook(@PathVariable("bookId") int bookId)  {
-        this.bookService.updateBook(bookId);
+    public void updateBook(@RequestBody String bookAuthor,@PathVariable("bookId") int bookId)  {
+        this.bookService.updateBook(bookAuthor,bookId);
         //return book;
     }
 }

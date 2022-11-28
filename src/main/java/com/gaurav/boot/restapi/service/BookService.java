@@ -53,9 +53,9 @@ public class BookService {
     }
 
     //Update Book Service
-    public void updateBook(int bookId) {
+    public void updateBook(String bookAuthor,int bookId) {
         Book b = getBookById(bookId);
-        b.setBookAuthor("Robert Kiyosaki");
+        b.setBookAuthor(bookAuthor);
 //        return getBookById(bookId);
         this.bookRepositry.save(b);
     }
