@@ -26,6 +26,7 @@ public class FileUploadController {
             System.out.println(file.getSize());
             System.out.println(file.getContentType());
             System.out.println(file.hashCode());
+            System.out.println("shyam");
 
             //If file is empty
             if (file.isEmpty()) {
@@ -39,8 +40,9 @@ public class FileUploadController {
 
         }catch (Exception exception)   {
             exception.printStackTrace();
+
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Working");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Working and testing ");
     }
 
 }
